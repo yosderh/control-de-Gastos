@@ -31,7 +31,7 @@ const ControlPresupuesto = ({gastos, setGastos, presupuesto, setPresupuesto, set
     }
 
     const handleResetApp= ()=>{
-        const confirmar = confirm('¿deseas borrar todos los datos de la App?');
+        const confirmar = confirm('¿esta seguro borrar todos los datos de la App?');
         if(confirmar){
             setGastos([]);
             setPresupuesto(0);
