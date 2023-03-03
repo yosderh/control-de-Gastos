@@ -6,7 +6,7 @@ import ListadoGastos from './components/ListadoGastos';
 import Filtros from './components/Filtros';
 
 import IconoNuevoGasto from './img/nuevo-gasto.svg'
-import { object } from 'prop-types';
+// import { object } from 'prop-types';
 
 function App() {
   const [presupuesto, setPresupuesto]= useState(Number(localStorage.getItem('presupuesto'))?? 0);

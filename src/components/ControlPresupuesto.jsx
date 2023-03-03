@@ -2,7 +2,12 @@ import { useState, useEffect} from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import  'react-circular-progressbar/dist/styles.css' ;
 
-const ControlPresupuesto = ({gastos, setGastos, presupuesto, setPresupuesto, setIsValidPresupuesto}) => {
+const ControlPresupuesto = ({gastos, 
+    setGastos,
+    presupuesto,
+    setPresupuesto, 
+    setIsValidPresupuesto,
+    }) => {
 
     const [disponible, setDisponible] = useState(0);
     const [gastado, setGastado] = useState(0);
@@ -56,7 +61,7 @@ const ControlPresupuesto = ({gastos, setGastos, presupuesto, setPresupuesto, set
 
 
         <div className='contenido-presupuesto'>
-
+            
             <button
              className='reset-app'
              onClick={handleResetApp}
@@ -64,10 +69,15 @@ const ControlPresupuesto = ({gastos, setGastos, presupuesto, setPresupuesto, set
                 Reset App
             </button>
 
-            <p>
-                <span>Presupuesto: </span>
-                {newFormat(presupuesto)}
-            </p>
+            <div className='presupuesto-y-button'>
+              <p>
+                 <span>Presupuesto: </span>
+                 {newFormat(presupuesto)}
+             </p>
+             <button className='agregar-presupuesto'
+                    onClick={()=> setIsValidPresupuesto(false)}
+             >+</button>
+            </div>
 
             <p className={`${disponible<0? 'negativo' : ''} `}>
                 <span>Disponible: </span>
@@ -78,6 +88,7 @@ const ControlPresupuesto = ({gastos, setGastos, presupuesto, setPresupuesto, set
                 <span>Gastado: </span>
                 {newFormat(gastado)}
             </p>
+    
         </div>
       
     </div>
